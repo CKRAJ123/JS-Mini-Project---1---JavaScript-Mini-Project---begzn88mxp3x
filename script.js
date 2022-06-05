@@ -1,10 +1,4 @@
-const calculateTemp=()=>{
-   const numberTemp=document.getElementById('temp').value;
-   //console.log(numberTemp);
-    const tempSelected=document.getElementById('temp_diff');
-    const valueTemp=temp_diff.options[tempSelected.selectedIndex].value;
 
-   // console.log(valueTemp);
    const celToFah=(cel)=>{
        let f=Math.round((cel*9/5)+32);
        return f;
@@ -13,6 +7,14 @@ const calculateTemp=()=>{
     let c=Math.round((f-32)*5/9);
     return c;
 }
+
+const calculateTemp=()=>{
+   const numberTemp=document.getElementById('temp').value;
+   //console.log(numberTemp);
+    const tempSelected=document.getElementById('temp_diff');
+    const valueTemp=temp_diff.options[tempSelected.selectedIndex].value;
+
+   
     let result;
     if(valueTemp=='cel'){
         result=celToFah(numberTemp);
@@ -24,4 +26,6 @@ const calculateTemp=()=>{
         document.getElementById('resultContainer').innerHTML= `= ${result} \xB0C.`;
         
     }
+       document.getElementById('temp').value=" ";
+
 }
